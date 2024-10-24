@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject cta;
+    [SerializeField] private GameObject terms;
+    [SerializeField] private GameObject prepare;
+    [SerializeField] private GameObject scanning;
+    [SerializeField] private GameObject analising;
+    [SerializeField] private GameObject qrcode;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    
 }

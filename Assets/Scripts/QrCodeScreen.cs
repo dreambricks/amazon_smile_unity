@@ -9,13 +9,6 @@ public class QrCodeScreen : MonoBehaviour
 
     public float time;
 
-    public Button nextBtn;
-
-    private void Start()
-    {
-        nextBtn.onClick.AddListener(() => GoToCTA());
-    }
-
     private void OnEnable()
     {
         Invoke(nameof(GoToCTA), time);
