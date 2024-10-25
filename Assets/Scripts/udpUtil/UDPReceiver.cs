@@ -5,12 +5,12 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-
 public class UDPReceiver : MonoBehaviour
 {
     Thread receiverThread;
     UdpClient client;
-    public int port;
+    public int port = 5005;  // Defina a porta desejada
+    public int port_sender = 5006;
     public bool startReceiving = true;
     public bool printToConsole = true;
     public string data;
@@ -19,22 +19,21 @@ public class UDPReceiver : MonoBehaviour
     public void Start()
     {
         myQueue = new LockFreeQueue<string>();
-        receiverThread = new Thread(
-            new ThreadStart(ReceiveData));
+        receiverThread = new Thread(new ThreadStart(ReceiveData));
         receiverThread.IsBackground = true;
         receiverThread.Start();
     }
 
-    // receive thread
     private void ReceiveData()
     {
-        client = new UdpClient(port);
+        client = new UdpClient(new IPEndPoint(IPAddress.Parse("127.0.0.1"), port));
+
         while (startReceiving)
         {
             try
             {
-                IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
-                byte[] dataByte = client.Receive(ref anyIP);
+                IPEndPoint localIP = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
+                byte[] dataByte = client.Receive(ref localIP);
                 data = Encoding.UTF8.GetString(dataByte);
                 myQueue.Enqueue(data);
 
@@ -64,5 +63,22 @@ public class UDPReceiver : MonoBehaviour
         }
 
         return result;
+    }
+
+
+    public void SendMessage(string message)
+    {
+        try
+        {
+            byte[] data = Encoding.UTF8.GetBytes(message);
+            IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port_sender);
+
+            client.Send(data, data.Length, endPoint);
+            Console.WriteLine($"Mensagem enviada: {message}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Erro ao enviar mensagem: {e}");
+        }
     }
 }

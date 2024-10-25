@@ -877,6 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenChangeEvent: {fileID: 11400000, guid: 78e348774d5c831419413e6d66398200, type: 2}
+  udpReceiver: {fileID: 2119493557}
   webcamTexture: {fileID: 364685425}
 --- !u!1 &592922867
 GameObject:
@@ -1011,6 +1012,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1410090332}
   fitas_qr: {fileID: 664527853}
+--- !u!1 &651549189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651549190}
+  - component: {fileID: 651549192}
+  - component: {fileID: 651549191}
+  m_Layer: 5
+  m_Name: Prepare_countdown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &651549190
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651549189}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1003617842}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 221}
+  m_SizeDelta: {x: 1051.74, y: 752.264}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &651549191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651549189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e47e51842c09b904e9b5b62cfc4dbb49, type: 3}
+    m_FontSize: 300
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 10
+--- !u!222 &651549192
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651549189}
+  m_CullTransparentMesh: 1
 --- !u!1 &664527853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,6 +1687,7 @@ RectTransform:
   - {fileID: 1215270151}
   - {fileID: 460969775}
   - {fileID: 364685424}
+  - {fileID: 651549190}
   - {fileID: 592922868}
   - {fileID: 1410090333}
   - {fileID: 664527854}
@@ -1842,7 +1923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1215270151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1959,6 +2040,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenChangeEvent: {fileID: 11400000, guid: 78e348774d5c831419413e6d66398200, type: 2}
   webcamTexture: {fileID: 364685425}
+  countdownTime: 5
+  textCount: {fileID: 651549191}
 --- !u!1 &1258684596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,8 +2372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fa3a3460e1c564ba3c1402c567caac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  port: 7001
-  startReceiving: 0
+  port: 5005
+  startReceiving: 1
   printToConsole: 1
   data: 
 --- !u!1660057539 &9223372036854775807
