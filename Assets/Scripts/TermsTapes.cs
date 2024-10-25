@@ -81,7 +81,6 @@ public class TermsTapes : MonoBehaviour
     {
         AnimatorStateInfo estadoAtual = animator.GetCurrentAnimatorStateInfo(0);
         bool terminou = estadoAtual.IsName(nomeAnimacao) && estadoAtual.normalizedTime >= 1;
-        Debug.Log($"Verificando se a animação '{nomeAnimacao}' terminou: {terminou}");
         return terminou;
     }
 

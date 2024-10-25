@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class QrCodeScreen : MonoBehaviour
 {
-    [SerializeField] private GameObject cta;
+    [SerializeField] private ScreenChangeEvent screenChangeEvent;
 
     public float time;
 
@@ -16,7 +16,7 @@ public class QrCodeScreen : MonoBehaviour
 
     void GoToCTA()
     {
-        cta.SetActive(true);
+        screenChangeEvent.OnScreenChange(ScreenType.CTA);
         gameObject.SetActive(false);
     }
 }

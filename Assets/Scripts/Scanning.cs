@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Scanning : MonoBehaviour
 {
-    [SerializeField] private GameObject analising;
+    [SerializeField] private ScreenChangeEvent screenChangeEvent;
+
 
     public RawImage webcamTexture;
 
@@ -14,7 +15,7 @@ public class Scanning : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            analising.gameObject.SetActive(true);
+            screenChangeEvent.OnScreenChange(ScreenType.ANALISING);
             gameObject.SetActive(false);
         }
     }

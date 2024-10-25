@@ -4,7 +4,8 @@ using UnityEngine;
 public class Cta : MonoBehaviour
 {
 
-    [SerializeField] private GameObject terms;
+    // [SerializeField] private GameObject terms;
+    [SerializeField] private ScreenChangeEvent screenChangeEvent;
 
     private void Start()
     {
@@ -18,8 +19,9 @@ public class Cta : MonoBehaviour
 
     private void OnMouseDown()
     {
-        terms.SetActive(true);
-        gameObject.SetActive(false);
+        // terms.SetActive(true);
+        // gameObject.SetActive(false);
+        screenChangeEvent.RaiseEvent(ScreenType.TERMS);
     }
 
 }

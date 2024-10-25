@@ -7,13 +7,19 @@ public class WebcamFeed : MonoBehaviour
     public int cameraIndex = 10;
     private WebCamTexture webcamTexture;
 
+    private ConfigManager config;
+
+    private void Awake()
+    {
+        config = new();
+
+        int deviceIndex = int.Parse(config.GetValue("Cam", "device", "0"));
+        cameraIndex = deviceIndex;
+    }
+
     void Start()
     {
         StartWebcam(cameraIndex);
-    }
-    private void OnEnable()
-    {
-        cameraIndex = 2;
     }
 
     public void StartWebcam(int index)
