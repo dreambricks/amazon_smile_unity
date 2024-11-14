@@ -14,12 +14,10 @@ public class TermsTapes : MonoBehaviour
     // Chamado toda vez que o GameObject é habilitado
     void OnEnable()
     {
-        Debug.Log("GameObject habilitado. Reiniciando ciclo de animação.");
         animator = GetComponent<Animator>();
 
         if (animator == null)
         {
-            Debug.LogError("Animator não encontrado! Certifique-se de que o GameObject tem um Animator Component.");
             return;
         }
 
@@ -38,7 +36,6 @@ public class TermsTapes : MonoBehaviour
         if (!animacaoNormalConcluida && AnimacaoTerminou("tapes"))
         {
             animacaoNormalConcluida = true;
-            Debug.Log("Animação normal concluída. Iniciando reverso.");
             terms.gameObject.SetActive(false);
             prepare.gameObject.SetActive(true);
             tocandoReverso = true;
@@ -53,7 +50,6 @@ public class TermsTapes : MonoBehaviour
             {
                 tempoAtual = 0;
                 tocandoReverso = false;
-                Debug.Log("Animação reversa concluída. Executando ação final.");
                 PararAnimacao(); // Para o Animator
                 AcaoFinal(); // Executa a ação final
             }
@@ -66,14 +62,12 @@ public class TermsTapes : MonoBehaviour
 
     void TocarAnimacaoNormal()
     {
-        Debug.Log("Tocando animação normal.");
         animator.speed = 1;
         animator.Play("tapes", 0, 0); // Começa do início
     }
 
     void PararAnimacao()
     {
-        Debug.Log("Parando Animator.");
         animator.enabled = false; // Desativa o Animator para garantir que ele pare
     }
 
@@ -86,7 +80,6 @@ public class TermsTapes : MonoBehaviour
 
     void AcaoFinal()
     {
-        Debug.Log("Ação final executada após a animação reversa.");
         // Coloque aqui a ação desejada após a animação reversa
     }
 }

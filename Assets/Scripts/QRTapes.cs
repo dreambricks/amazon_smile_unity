@@ -38,7 +38,6 @@ public class QRTapes : MonoBehaviour
         if (!animacaoNormalConcluida && AnimacaoTerminou("tapes"))
         {
             animacaoNormalConcluida = true;
-            Debug.Log("Animação normal concluída. Iniciando reverso.");
             analising.gameObject.SetActive(false);
             qrcode.gameObject.SetActive(true);
             tocandoReverso = true;
@@ -53,7 +52,6 @@ public class QRTapes : MonoBehaviour
             {
                 tempoAtual = 0;
                 tocandoReverso = false;
-                Debug.Log("Animação reversa concluída. Executando ação final.");
                 PararAnimacao(); // Para o Animator
                 AcaoFinal(); // Executa a ação final
             }
@@ -66,14 +64,12 @@ public class QRTapes : MonoBehaviour
 
     void TocarAnimacaoNormal()
     {
-        Debug.Log("Tocando animação normal.");
         animator.speed = 1;
         animator.Play("tapes", 0, 0); // Começa do início
     }
 
     void PararAnimacao()
     {
-        Debug.Log("Parando Animator.");
         animator.enabled = false; // Desativa o Animator para garantir que ele pare
     }
 

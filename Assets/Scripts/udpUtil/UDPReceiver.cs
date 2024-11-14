@@ -75,6 +75,7 @@ public class UDPReceiver : MonoBehaviour
 
             client.Send(data, data.Length, endPoint);
             Console.WriteLine($"Mensagem enviada: {message}");
+            Debug.Log($"Mensagem enviada: {message}");
         }
         catch (Exception e)
         {

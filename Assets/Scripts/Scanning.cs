@@ -12,6 +12,7 @@ public class Scanning : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("Prepare to send message");
         udpReceiver.SendMessage("start");
     }
 
@@ -23,9 +24,26 @@ public class Scanning : MonoBehaviour
 
     private void UdpRead()
     {
-        if (udpReceiver.GetLastestData() == "sorrindo")
+        string data = udpReceiver.GetLastestData();
+
+        if (data == "rindo")
         {
             screenChangeEvent.OnScreenChange(ScreenType.ANALISING);
+            PlayerPrefs.SetString("emotion", "rindo");
+            gameObject.SetActive(false);
+        }
+
+        else if (data == "neutro")
+        {
+            screenChangeEvent.OnScreenChange(ScreenType.ANALISING);
+            PlayerPrefs.SetString("emotion", "neutro");
+            gameObject.SetActive(false);
+        }
+
+        else if (data == "sorrindo")
+        {
+            screenChangeEvent.OnScreenChange(ScreenType.ANALISING);
+            PlayerPrefs.SetString("emotion", "sorrindo");
             gameObject.SetActive(false);
         }
     }
