@@ -7,18 +7,29 @@ public class Scanning : MonoBehaviour
 {
     [SerializeField] private ScreenChangeEvent screenChangeEvent;
     [SerializeField] private UDPReceiver udpReceiver;
-
+    public float countdownTime;
+    private float currentTime;
     public RawImage webcamTexture;
+    private ConfigManager config;
+
+
+    private void Awake()
+    {
+        config = new();
+        countdownTime = float.Parse(config.GetValue("Timer", "scanning"));
+    }
 
     private void OnEnable()
     {
+        currentTime = countdownTime;
         Debug.Log("Prepare to send message");
         udpReceiver.SendMessage("start");
+        StartCoroutine(CountdownCoroutine());
     }
 
     private void Update()
     {
-        ChangeScreen();
+        PressToChangeScreen();
         UdpRead();
     }
 
@@ -48,13 +59,36 @@ public class Scanning : MonoBehaviour
         }
     }
 
-    private void ChangeScreen()
+    private void PressToChangeScreen()
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            screenChangeEvent.OnScreenChange(ScreenType.ANALISING);
-            gameObject.SetActive(false);
+            ChangeScreen();
         }
+    }
+
+
+    private void ChangeScreen()
+    {
+        screenChangeEvent.OnScreenChange(ScreenType.ANALISING);
+        PlayerPrefs.SetString("emotion", "sorrindo");
+        gameObject.SetActive(false);
+    }
+
+    private IEnumerator CountdownCoroutine()
+    {
+        while (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+            yield return null;
+        }
+
+        OnCountdownFinished();
+    }
+
+    private void OnCountdownFinished()
+    {
+        ChangeScreen();
     }
 
 

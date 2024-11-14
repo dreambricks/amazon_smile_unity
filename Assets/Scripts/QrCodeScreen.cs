@@ -15,6 +15,7 @@ public class QrCodeScreen : MonoBehaviour
     private void Awake()
     {
         config = new();
+        time = int.Parse(config.GetValue("Timer", "qrcode"));
     }
 
     private void OnEnable()

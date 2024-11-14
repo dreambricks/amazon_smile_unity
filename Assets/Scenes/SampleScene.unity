@@ -818,7 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenChangeEvent: {fileID: 11400000, guid: 78e348774d5c831419413e6d66398200, type: 2}
   text: {fileID: 487873127}
-  time: 10
+  time: 0
 --- !u!1 &460969774
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &460969775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2342,7 +2342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenChangeEvent: {fileID: 11400000, guid: 78e348774d5c831419413e6d66398200, type: 2}
   webcamTexture: {fileID: 364685425}
-  countdownTime: 5
+  countdownTime: 0
   textCount: {fileID: 651549191}
 --- !u!1 &1226100233
 GameObject:
@@ -2857,8 +2857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fa3a3460e1c564ba3c1402c567caac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  port: 5007
-  port_sender: 5008
+  port: 0
+  port_sender: 0
   startReceiving: 1
   printToConsole: 1
   data: 

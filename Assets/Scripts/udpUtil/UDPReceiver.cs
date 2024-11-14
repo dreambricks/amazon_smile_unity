@@ -9,12 +9,21 @@ public class UDPReceiver : MonoBehaviour
 {
     Thread receiverThread;
     UdpClient client;
-    public int port = 5005;  // Defina a porta desejada
-    public int port_sender = 5006;
+    public int port;  // Defina a porta desejada
+    public int port_sender;
     public bool startReceiving = true;
     public bool printToConsole = true;
     public string data;
     public static LockFreeQueue<string> myQueue;
+
+    private ConfigManager config;
+
+    private void Awake()
+    {
+        config = new();
+        port = int.Parse(config.GetValue("Serial", "serialReceiver"));
+        port_sender = int.Parse(config.GetValue("Serial", "serialSender"));
+    }
 
     public void Start()
     {

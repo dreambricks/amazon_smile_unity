@@ -7,11 +7,18 @@ public class Prepare : MonoBehaviour
 {
     [SerializeField] private ScreenChangeEvent screenChangeEvent;
     public RawImage webcamTexture;
-
-    public float countdownTime = 10f;
+    public float countdownTime;
     private float currentTime;
     public Text textCount;
 
+    private ConfigManager config;
+
+    private void Awake()
+    {
+        config = new();
+
+        countdownTime = float.Parse(config.GetValue("Timer", "prepare"));
+    }
 
     private void OnEnable()
     {
