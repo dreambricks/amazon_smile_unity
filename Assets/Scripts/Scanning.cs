@@ -70,9 +70,19 @@ public class Scanning : MonoBehaviour
 
     private void ChangeScreen()
     {
+        List<string> list = new List<string> { "rindo", "sorrindo", "neutro" };
+        string emotion = SortElement(list);
+        Debug.Log("Random emotion: " + emotion);
         screenChangeEvent.OnScreenChange(ScreenType.ANALISING);
-        PlayerPrefs.SetString("emotion", "sorrindo");
+        PlayerPrefs.SetString("emotion", emotion);
         gameObject.SetActive(false);
+    }
+
+    static string SortElement(List<string> list)
+    {
+        System.Random random = new();
+        int index = random.Next(list.Count);
+        return list[index];
     }
 
     private IEnumerator CountdownCoroutine()
