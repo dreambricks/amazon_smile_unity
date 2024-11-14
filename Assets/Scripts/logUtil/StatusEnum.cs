@@ -1,6 +1,5 @@
 public enum StatusEnum
 {
-    PAROU_EM_ATRIBUTOS,
-    PAROU_EM_REFRESCANCIA,
+    TERMOS_NAO_ACEITO,
     ACAO_CONCLUIDA
 }

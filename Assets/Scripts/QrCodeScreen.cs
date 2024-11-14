@@ -33,8 +33,19 @@ public class QrCodeScreen : MonoBehaviour
 
     void GoToCTA()
     {
+        SaveLog();
         screenChangeEvent.OnScreenChange(ScreenType.CTA);
         PlayerPrefs.DeleteAll();
         gameObject.SetActive(false);
     }
+
+    void SaveLog()
+    {
+        DataLog dataLog = LogUtil.GetDatalogFromJson();
+        dataLog.status = StatusEnum.ACAO_CONCLUIDA.ToString();
+        dataLog.additional = PlayerPrefs.GetString("emotion");
+        LogUtil.SaveLog(dataLog);
+    }
+
+
 }
