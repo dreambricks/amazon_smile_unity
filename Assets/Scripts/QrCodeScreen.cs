@@ -1,16 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using ZXing;
 
 public class QrCodeScreen : MonoBehaviour
 {
     [SerializeField] private ScreenChangeEvent screenChangeEvent;
     private ConfigManager config;
 
+    public CalendarioPromocoes calendar;
+
     public Text text;
 
     public float time;
+
+    public string amazonlink;
+
+    public RawImage qrCodeImage;
 
     private void Awake()
     {
@@ -27,8 +32,11 @@ public class QrCodeScreen : MonoBehaviour
     void GetCupom()
     {
         string emotionSaved = PlayerPrefs.GetString("emotion");
-        string cupom = config.GetValue("Emotion", emotionSaved);
-        text.text = cupom;
+        string today = config.GetValue("Calendar", "dia");
+        var calendarValues = calendar.BuscarPorCategoriaEData(emotionSaved, today);
+        text.text = calendarValues.cupons;
+        amazonlink = calendarValues.link;
+        GenerateQRCode(amazonlink);
     }
 
     void GoToCTA()
@@ -47,5 +55,26 @@ public class QrCodeScreen : MonoBehaviour
         LogUtil.SaveLog(dataLog);
     }
 
+    void GenerateQRCode(string text)
+    {
+        var writer = new BarcodeWriter
+        {
+            Format = BarcodeFormat.QR_CODE,
+            Options = new ZXing.Common.EncodingOptions
+            {
+                Width = 256,
+                Height = 256,
+                Margin = 1
+            }
+        };
+
+        var pixelData = writer.Write(text);
+
+        var texture = new Texture2D(256, 256);
+        texture.SetPixels32(pixelData);
+        texture.Apply();
+
+        qrCodeImage.texture = texture;
+    }
 
 }

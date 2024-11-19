@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,10 @@ public class Terms : MonoBehaviour
     private ConfigManager config;
     public float countdownTime;
     private float currentTime;
+    public TextMeshProUGUI dinamicText;
+    public CalendarioPromocoes calendar;
+
+
 
     [SerializeField] private ScreenChangeEvent screenChangeEvent;
 
@@ -25,11 +30,7 @@ public class Terms : MonoBehaviour
     void OnEnable()
     {
         currentTime = countdownTime;
-
-        // myToggle.isOn = false;
-        // UpdateButtonState(false);
-        // myToggle.onValueChanged.AddListener(OnToggleValueChanged);
-
+        dinamicText.text = calendar.textoVariavelStep2;
         myButton.onClick.AddListener(OnButtonClicked);
         StartCoroutine(CountdownCoroutine());
     }
@@ -67,22 +68,5 @@ public class Terms : MonoBehaviour
         dataLog.status = StatusEnum.TERMOS_NAO_ACEITO.ToString();
         LogUtil.SaveLog(dataLog);
     }
-
-    // void OnToggleValueChanged(bool isChecked)
-    // {
-    //     UpdateButtonState(isChecked);
-    // }
-
-    // void UpdateButtonState(bool isActive)
-    // {
-    //     myButton.interactable = isActive;
-
-    //     Image buttonImage = myButton.GetComponent<Image>();
-
-    //     Color color = buttonImage.color;
-    //     color.a = isActive ? 1f : 220f / 255f;
-    //     buttonImage.color = color;
-    // }
-
 
 }

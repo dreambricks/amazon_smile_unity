@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038147, y: -530}
-  m_SizeDelta: {x: 353.452, y: 66.273}
+  m_AnchoredPosition: {x: -1.199, y: -846.6}
+  m_SizeDelta: {x: 532.934, y: 99.926}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27544412
 MonoBehaviour:
@@ -243,6 +243,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27544410}
   m_CullTransparentMesh: 1
+--- !u!1 &56090006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 56090008}
+  - component: {fileID: 56090007}
+  m_Layer: 0
+  m_Name: CalendarUpdate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &56090007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56090006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9b66bee70f55b44ac6aadf1ce8bd61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoriaSorriso: 
+  cupons: 
+  linkQrCode: 
+  textoVariavelStep2: 
+  updateTime: 120
+--- !u!4 &56090008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56090006}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.440552, y: -4.4026403, z: 90.26896}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &68503435
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,8 +467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -19}
-  m_SizeDelta: {x: 673.302, y: 834.01}
+  m_AnchoredPosition: {x: -1.199, y: -381.61}
+  m_SizeDelta: {x: 869.266, y: 707.926}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &179432953
 MonoBehaviour:
@@ -714,6 +763,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 487873126}
+  - {fileID: 1187799225}
   m_Father: {fileID: 1003617842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -786,7 +836,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6557049184af29e49ad8cb983d7d05ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78d5af0beeccee64fae32dd422545519, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -817,8 +867,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenChangeEvent: {fileID: 11400000, guid: 78e348774d5c831419413e6d66398200, type: 2}
+  calendar: {fileID: 56090007}
   text: {fileID: 487873127}
   time: 0
+  amazonlink: 
+  qrCodeImage: {fileID: 1187799226}
 --- !u!1 &460969774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,8 +1118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118, y: -42}
-  m_SizeDelta: {x: 458.966, y: 139.359}
+  m_AnchoredPosition: {x: 74, y: -20}
+  m_SizeDelta: {x: 391.756, y: 163.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &487873127
 MonoBehaviour:
@@ -1090,18 +1143,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e47e51842c09b904e9b5b62cfc4dbb49, type: 3}
-    m_FontSize: 84
+    m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 86
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: BLACK
+  m_Text: 20% off em Cozinha test
 --- !u!222 &487873128
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1350,8 +1403,8 @@ Transform:
   m_GameObject: {fileID: 664527853}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.179, y: -0.344, z: -2.14}
-  m_LocalScale: {x: 99.92419, y: 99.996506, z: 16.627687}
+  m_LocalPosition: {x: -0.179, y: -15.373, z: -2.14}
+  m_LocalScale: {x: 99.92419, y: 101.500854, z: 16.627687}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1003617842}
@@ -1443,6 +1496,140 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   analising: {fileID: 592922867}
   qrcode: {fileID: 392773420}
+--- !u!1 &664862892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664862893}
+  - component: {fileID: 664862895}
+  - component: {fileID: 664862894}
+  m_Layer: 5
+  m_Name: DinamicText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &664862893
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664862892}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 795556892}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 217}
+  m_SizeDelta: {x: 767.494, y: 399.636}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &664862894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664862892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: teteteee4e
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 196cbb652150dcd4fbc121caf71c03c2, type: 2}
+  m_sharedMaterial: {fileID: 4653878075250428610, guid: 196cbb652150dcd4fbc121caf71c03c2, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 47
+  m_fontSizeBase: 47
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 40
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &664862895
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664862892}
+  m_CullTransparentMesh: 1
 --- !u!1 &704740779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1733,7 @@ RectTransform:
   - {fileID: 27544411}
   - {fileID: 179432952}
   - {fileID: 1226100234}
+  - {fileID: 664862893}
   - {fileID: 1258684597}
   m_Father: {fileID: 1003617842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1619,7 +1807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae8d1791fda371b4dba654a96048f303, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59a1792e4560be141b04499b19add2ef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1653,6 +1841,8 @@ MonoBehaviour:
   myToggle: {fileID: 1258684598}
   myButton: {fileID: 27544412}
   countdownTime: 0
+  dinamicText: {fileID: 664862894}
+  calendar: {fileID: 56090007}
   screenChangeEvent: {fileID: 11400000, guid: 78e348774d5c831419413e6d66398200, type: 2}
 --- !u!1 &875965732
 GameObject:
@@ -2209,6 +2399,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160268413}
   m_CullTransparentMesh: 1
+--- !u!1 &1187799224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1187799225}
+  - component: {fileID: 1187799227}
+  - component: {fileID: 1187799226}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1187799225
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187799224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 392773421}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.00000011921, y: -590.7194}
+  m_SizeDelta: {x: 366.76, y: 333.092}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1187799226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187799224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9568628, g: 0.95294124, b: 0.93725497, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1187799227
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187799224}
+  m_CullTransparentMesh: 1
 --- !u!1 &1215270150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,8 +2643,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.904, y: -13}
-  m_SizeDelta: {x: 640.917, y: 790.046}
+  m_AnchoredPosition: {x: -1.199, y: -375}
+  m_SizeDelta: {x: 845.275, y: 708.782}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226100235
 MonoBehaviour:
@@ -2404,56 +2666,56 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\\t\\t\\t<b>TERMOS E CONDI\xC7\xD5ES DE USO DE DADOS E REGULAMENTO DA
-    \r\\n \\t\\t\\t\\t\\tCAMPANHA \u201CBLACK FRIDAY AMAZON\u201D</b>\r\n\r\nO presente
-    Termo apresenta e disciplina o uso para divulga\xE7\xE3o na Campanha \u201CBLACK
-    FRIDAY AMAZON\u201D (\u201CCampanha\u201D), promovida pela empresa <b>MEDIABRANDS
-    PUBLICIDADE LTDA</b>, pessoa jur\xEDdica de direito privado, inscrita no CNPJ
-    sob o n\xBA 18.875.863/0001-78, com sede na Rua Frei Caneca, 1355 \u2013 5\xBA,
-    6\xBA e 7\xBA andar - S\xE3o Paulo/SP, CEP 01307-003, representada na forma de
-    seu contrato social, agindo por conta e ordem do seu cliente anunciante <b>AMAZON
-    SERVI\xC7OS DE VAREJO DO BRASIL LTDA</b>, inscrita no CNPJ/MF sob o n\xBA 15.436.940/0001-03,
-    com sede na Avenida Presidente Juscelino Kubitschek 2041 Torre E - Andar 18 \u2013
-    S\xE3o Paulo/SP, CEP 04543-000 (<b>\u201CAMAZON BRASIL\u201D</b>) e detentora
-    de todos os direitos para os fins aqui propostos (\u201CTermo\u201D).\r\n\r\nA
-    Campanha consiste na intera\xE7\xE3o de pessoas com a tela do mobili\xE1rio urbano
-    digital localizado na Av. Paulista, 1374 - Bela Vista - S\xE3o Paulo \u2013 SP
-    com o objetivo de ganhar um cupom de desconto atrav\xE9s da medi\xE7\xE3o de
-    seu sorriso para utilizar no site da <b>AMAZON BRASIL</b>.\r\n\r\n<b>AUTORIZA\xC7\xC3O
-    DE USO DE IMAGEM</b>\r\nNeste ato, e para todos os fins de direito, voc\xEA:
-    aceita em sua totalidade as regras e condi\xE7\xF5es comerciais apresentadas
-    na Campanha e autoriza, <b>por livre e expresso consentimento, mediante o aceite
-    deste Termo, a captura de sua imagem em v\xEDdeo na tela do equipamento, em car\xE1ter
-    gratuito, volunt\xE1rio, irrevog\xE1vel e irretrat\xE1vel</b>, para utiliza\xE7\xE3o
-    na din\xE2mica desta campanha exclusivamente para divulga\xE7\xE3o e publicidade
-    desta Campanha.\r\n\r\nAo aceitar este Termo, voc\xEA declara e garante que a
-    <b>AMAZON BRASIL</b> e terceiros autorizados por esta, n\xE3o possuem qualquer
-    obriga\xE7\xE3o de restitui\xE7\xE3o econ\xF4mica pela sua imagem na Campanha,
-    n\xE3o sendo devido a voc\xEA qualquer direito sobre o mesmo.\r\n\r\nAo aceitar
-    este Termo, voc\xEA declara e garante que:\r\n(i) \xE9 o \xFAnico titular de
-    todos os direitos do v\xEDdeo;\r\n(ii) \xE9 pessoa f\xEDsica e capaz, com idade
-    igual ou superior a <b>18 (dezoito) anos</b>, ou emancipado legalmente, conforme
-    o C\xF3digo Civil Brasileiro, e tem plenos poderes e autoridade para conceder
-    \xE0 <b>AMAZON BRASIL</b> todos os direitos contemplados neste Termo;\r\n(iii)
-    o uso da imagem pela <b>AMAZON BRASIL</b> n\xE3o viola ou infringe os direitos
-    de qualquer pessoa f\xEDsica ou jur\xEDdica, n\xE3o sendo pass\xEDvel de quaisquer
-    alega\xE7\xF5es de viola\xE7\xE3o, difama\xE7\xE3o, invas\xE3o de privacidade,
-    publicidade, pedidos de pagamento ou quaisquer outras reivindica\xE7\xF5es pelo
-    uso da imagem.\r\n\r\n<b>PER\xCDODO</b>\r\nEsta Campanha iniciar\xE1 no dia <b>26/11/2024</b>
-    e terminar\xE1 no dia <b>02/12/2024</b>, sendo certo que nenhum v\xEDdeo e/ou
-    dado pessoal ficar\xE1 armazenado no MUB e em nenhum servidor ou local, seja
-    f\xEDsico ou digital.\r\n\r\n<b>ARMAZENAMENTO E DESCARTE</b>\r\nA <b>AMAZON BRASIL</b>
-    e a ELETROMIDIA s\xE3o respons\xE1veis, na medida de suas a\xE7\xF5es, pela Campanha
-    e pela capta\xE7\xE3o tempor\xE1ria das imagens, nos termos previstos na Lei
-    n\xBA 13.709/2018 (\u201CLGPD\u201D), e garantem que durante a participa\xE7\xE3o
-    na ativa\xE7\xE3o da Campanha nenhum v\xEDdeo e/ou imagem feitos do usu\xE1rio
-    ser\xE3o armazenados.\r\n\r\nO presente Termo poder\xE1 ser alterado em tempo
-    real durante o prazo da Campanha ou suspenso a qualquer tempo, principalmente,
-    mas n\xE3o somente, por motivo de caso fortuito, for\xE7a maior ou qualquer outro
-    fator ou motivo imprevisto.\r\n\r\nDiante disso, o aceite e autoriza\xE7\xE3o
-    deste Termo poder\xE3o ser revogados a qualquer tempo por livre e expressa vontade
-    do titular atrav\xE9s do canal:\r\nTelefone: 0800 038 0541 - SAC (Servi\xE7o
-    de Atendimento ao Consumidor) da Amazon.\r\n"
+  m_text: "\\t\\t\\t\\t\\t<b>TERMOS E CONDI\xC7\xD5ES DE USO DE DADOS E REGULAMENTO
+    DA \r\\n \\t\\t\\t\\t\\t\\t\\tCAMPANHA \u201CBLACK FRIDAY AMAZON\u201D</b>\r\n\r\nO
+    presente Termo apresenta e disciplina o uso para divulga\xE7\xE3o na Campanha
+    \u201CBLACK FRIDAY AMAZON\u201D (\u201CCampanha\u201D), promovida pela empresa
+    <b>MEDIABRANDS PUBLICIDADE LTDA</b>, pessoa jur\xEDdica de direito privado, inscrita
+    no CNPJ sob o n\xBA 18.875.863/0001-78, com sede na Rua Frei Caneca, 1355 \u2013
+    5\xBA, 6\xBA e 7\xBA andar - S\xE3o Paulo/SP, CEP 01307-003, representada na
+    forma de seu contrato social, agindo por conta e ordem do seu cliente anunciante
+    <b>AMAZON SERVI\xC7OS DE VAREJO DO BRASIL LTDA</b>, inscrita no CNPJ/MF sob o
+    n\xBA 15.436.940/0001-03, com sede na Avenida Presidente Juscelino Kubitschek
+    2041 Torre E - Andar 18 \u2013 S\xE3o Paulo/SP, CEP 04543-000 (<b>\u201CAMAZON
+    BRASIL\u201D</b>) e detentora de todos os direitos para os fins aqui propostos
+    (\u201CTermo\u201D).\r\n\r\nA Campanha consiste na intera\xE7\xE3o de pessoas
+    com a tela do mobili\xE1rio urbano digital localizado na Av. Paulista, 1374 -
+    Bela Vista - S\xE3o Paulo \u2013 SP com o objetivo de ganhar um cupom de desconto
+    atrav\xE9s da medi\xE7\xE3o de seu sorriso para utilizar no site da <b>AMAZON
+    BRASIL</b>.\r\n\r\n<b>AUTORIZA\xC7\xC3O DE USO DE IMAGEM</b>\r\nNeste ato, e
+    para todos os fins de direito, voc\xEA: aceita em sua totalidade as regras e
+    condi\xE7\xF5es comerciais apresentadas na Campanha e autoriza, <b>por livre
+    e expresso consentimento, mediante o aceite deste Termo, a captura de sua imagem
+    em v\xEDdeo na tela do equipamento, em car\xE1ter gratuito, volunt\xE1rio, irrevog\xE1vel
+    e irretrat\xE1vel</b>, para utiliza\xE7\xE3o na din\xE2mica desta campanha exclusivamente
+    para divulga\xE7\xE3o e publicidade desta Campanha.\r\n\r\nAo aceitar este Termo,
+    voc\xEA declara e garante que a <b>AMAZON BRASIL</b> e terceiros autorizados
+    por esta, n\xE3o possuem qualquer obriga\xE7\xE3o de restitui\xE7\xE3o econ\xF4mica
+    pela sua imagem na Campanha, n\xE3o sendo devido a voc\xEA qualquer direito sobre
+    o mesmo.\r\n\r\nAo aceitar este Termo, voc\xEA declara e garante que:\r\n(i)
+    \xE9 o \xFAnico titular de todos os direitos do v\xEDdeo;\r\n(ii) \xE9 pessoa
+    f\xEDsica e capaz, com idade igual ou superior a <b>18 (dezoito) anos</b>, ou
+    emancipado legalmente, conforme o C\xF3digo Civil Brasileiro, e tem plenos poderes
+    e autoridade para conceder \xE0 <b>AMAZON BRASIL</b> todos os direitos contemplados
+    neste Termo;\r\n(iii) o uso da imagem pela <b>AMAZON BRASIL</b> n\xE3o viola
+    ou infringe os direitos de qualquer pessoa f\xEDsica ou jur\xEDdica, n\xE3o sendo
+    pass\xEDvel de quaisquer alega\xE7\xF5es de viola\xE7\xE3o, difama\xE7\xE3o,
+    invas\xE3o de privacidade, publicidade, pedidos de pagamento ou quaisquer outras
+    reivindica\xE7\xF5es pelo uso da imagem.\r\n\r\n<b>PER\xCDODO</b>\r\nEsta Campanha
+    iniciar\xE1 no dia <b>26/11/2024</b> e terminar\xE1 no dia <b>02/12/2024</b>,
+    sendo certo que nenhum v\xEDdeo e/ou dado pessoal ficar\xE1 armazenado no MUB
+    e em nenhum servidor ou local, seja f\xEDsico ou digital.\r\n\r\n<b>ARMAZENAMENTO
+    E DESCARTE</b>\r\nA <b>AMAZON BRASIL</b> e a ELETROMIDIA s\xE3o respons\xE1veis,
+    na medida de suas a\xE7\xF5es, pela Campanha e pela capta\xE7\xE3o tempor\xE1ria
+    das imagens, nos termos previstos na Lei n\xBA 13.709/2018 (\u201CLGPD\u201D),
+    e garantem que durante a participa\xE7\xE3o na ativa\xE7\xE3o da Campanha nenhum
+    v\xEDdeo e/ou imagem feitos do usu\xE1rio ser\xE3o armazenados.\r\n\r\nO presente
+    Termo poder\xE1 ser alterado em tempo real durante o prazo da Campanha ou suspenso
+    a qualquer tempo, principalmente, mas n\xE3o somente, por motivo de caso fortuito,
+    for\xE7a maior ou qualquer outro fator ou motivo imprevisto.\r\n\r\nDiante disso,
+    o aceite e autoriza\xE7\xE3o deste Termo poder\xE3o ser revogados a qualquer
+    tempo por livre e expressa vontade do titular atrav\xE9s do canal:\r\nTelefone:
+    0800 038 0541 - SAC (Servi\xE7o de Atendimento ao Consumidor) da Amazon.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2480,8 +2742,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 13.5
+  m_fontSizeBase: 13.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2796,8 +3058,8 @@ Transform:
   m_GameObject: {fileID: 1429894031}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.179, y: -0.344, z: -2.14}
-  m_LocalScale: {x: 99.92419, y: 99.996506, z: 16.627687}
+  m_LocalPosition: {x: -0.179, y: -11.079, z: -2.14}
+  m_LocalScale: {x: 99.92419, y: 101.09647, z: 16.627687}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1003617842}
@@ -2917,6 +3179,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 963194228}
+  - {fileID: 56090008}
   - {fileID: 1049161713}
   - {fileID: 2116131672}
   - {fileID: 68503437}
