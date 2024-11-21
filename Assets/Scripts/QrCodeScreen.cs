@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using ZXing;
+using System.IO;
 
 public class QrCodeScreen : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class QrCodeScreen : MonoBehaviour
     public float time;
 
     public string amazonlink;
+
+    public string qrcodepath;
 
     public RawImage qrCodeImage;
 
@@ -36,7 +39,17 @@ public class QrCodeScreen : MonoBehaviour
         var calendarValues = calendar.BuscarPorCategoriaEData(emotionSaved, today);
         text.text = calendarValues.cupons;
         amazonlink = calendarValues.link;
-        GenerateQRCode(amazonlink);
+        qrcodepath = calendarValues.qrcodepath;
+
+        Debug.Log("qrcodePath: " + qrcodepath);
+        string imagesPath = Path.Combine(Application.streamingAssetsPath, "amazonqrcodes");
+        Debug.Log("imagesPath: " + imagesPath);
+        string folderPath = Path.Combine(imagesPath, qrcodepath);
+        Debug.Log("folderPath: " + folderPath);
+
+        string qrcodePath = FindFirstPng(folderPath);
+        Debug.Log("qrcodeFullPath: " + qrcodePath);
+        LoadPngIntoRawImage(qrcodePath);
     }
 
     void GoToCTA()
@@ -52,6 +65,10 @@ public class QrCodeScreen : MonoBehaviour
         DataLog dataLog = LogUtil.GetDatalogFromJson();
         dataLog.status = StatusEnum.ACAO_CONCLUIDA.ToString();
         dataLog.additional = PlayerPrefs.GetString("emotion");
+        if (dataLog.additional == "rindo")
+        {
+            dataLog.additional = "pequeno";
+        }
         LogUtil.SaveLog(dataLog);
     }
 
@@ -75,6 +92,40 @@ public class QrCodeScreen : MonoBehaviour
         texture.Apply();
 
         qrCodeImage.texture = texture;
+    }
+
+    string FindFirstPng(string folderPath)
+    {
+        if (Directory.Exists(folderPath))
+        {
+            string[] files = Directory.GetFiles(folderPath, "*.png");
+            if (files.Length > 0)
+            {
+                Debug.Log("QR Code File: " + files[0]);
+                return files[0];
+            }
+        }
+        else
+        {
+            Debug.LogError("A pasta especificada não existe: " + folderPath);
+        }
+
+        return null;
+    }
+
+    void LoadPngIntoRawImage(string filePath)
+    {
+        byte[] fileData = File.ReadAllBytes(filePath);
+
+        Texture2D texture = new Texture2D(2, 2);
+        if (texture.LoadImage(fileData))
+        {
+            qrCodeImage.texture = texture;
+        }
+        else
+        {
+            Debug.LogError("Falha ao carregar a imagem em Texture2D.");
+        }
     }
 
 }
